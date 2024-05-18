@@ -1,5 +1,6 @@
 .DS_STORE
 .idea
+database.sqlite
 
 # Logs
 logs
