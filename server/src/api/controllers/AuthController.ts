@@ -42,6 +42,7 @@ class AuthController {
 
     return res.json({
       token,
+      user,
     });
   }
 }
