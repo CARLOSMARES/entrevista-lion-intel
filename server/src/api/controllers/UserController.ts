@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import { Request, Response } from "express";
-import { AppDataSource } from "../../data-sources";
+import { AppDataSource } from "../data-sources";
 import { User } from "../entities/User";
 class UserController {
   static async getAllUsers(req: Request, res: Response) {

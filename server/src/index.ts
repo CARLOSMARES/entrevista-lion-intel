@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { ExpressApi } from "./api/api";
+import { AppDataSource } from "./api/data-sources";
 import { API } from "./api/interfaces";
-import { AppDataSource } from "./data-sources";
 import { ServerHTTP } from "./servers/http";
 dotenv.config();
 const host = process.env.Server_URL || "http://localhost";

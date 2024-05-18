@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import { AppDataSource } from "../../data-sources";
+import { AppDataSource } from "../data-sources";
 import { User } from "../entities/User";
 
 class AuthController {
