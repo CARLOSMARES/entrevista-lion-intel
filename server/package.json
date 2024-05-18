@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --respawn src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carlos Ignacio Olano Mares",
   "license": "ISC",
   "description": "",
   "dependencies": {
