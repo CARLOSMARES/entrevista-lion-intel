@@ -11,7 +11,7 @@ class UserController {
   static async createUser(req: Request, res: Response) {
     const { firstName, lastName, email, password, rol } = req.body;
     if (!(firstName && lastName && email && password && rol)) {
-      return res.json(400).json({
+      return res.status(400).json({
         message: `firstName, lastName, email, password and rol are required`,
       });
     }

@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import { DataSource, Table } from "typeorm";
 import { User } from "./entities/User";
 
@@ -53,6 +54,21 @@ AppDataSource.initialize()
       console.log("User table created.");
     }
     await queryRunner.release();
+    const userRepository = AppDataSource.getRepository(User);
+    const email = "admin@admin.com";
+    const existingUser = await userRepository.findOneBy({ email });
+    if (existingUser) {
+    } else {
+      const hashedPassword = await bcrypt.hash("adminadmin", 10);
+      const newUser = userRepository.create({
+        firstName: "admin",
+        lastName: "admin",
+        email: email,
+        password: hashedPassword,
+        rol: "admin",
+      });
+      await userRepository.save(newUser);
+    }
   })
   .catch((err) => {
     console.error(`Error during Data Source initialization: ${err}`);
