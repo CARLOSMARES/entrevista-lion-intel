@@ -9,16 +9,18 @@ class SalaController {
     res.json(sala);
   }
   static async createSala(req: Request, res: Response) {
-    const { disponible, numeroSala, pantalla, telefono, wifi, numeroAsientos } =
-      req.body;
+    const {
+      // disponible,
+      numeroSala,
+      pantalla,
+      telefono,
+      wifi,
+      numeroAsientos,
+    } = req.body;
     if (
       !(
-        disponible &&
-        numeroSala &&
-        pantalla &&
-        telefono &&
-        wifi &&
-        numeroAsientos
+        // disponible &&
+        (numeroSala && pantalla && telefono && wifi && numeroAsientos)
       )
     ) {
       return res.status(400).json({
@@ -33,7 +35,7 @@ class SalaController {
       });
     }
     const newSala = salaRepository.create({
-      disponible,
+      // disponible,
       numeroSala,
       pantalla,
       telefono,

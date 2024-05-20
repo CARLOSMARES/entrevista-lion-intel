@@ -18,6 +18,7 @@ export class ExpressApi implements API {
     this.router.use("/api/v1/User", routes.user);
     this.router.use("/api/v1/sala", routes.Sala);
     this.router.post("/register", UserController.createUser);
+    this.router.use("/api/v1/reservacion", routes.Reservacion);
   }
 
   public createServer = (): Server => {

@@ -4,8 +4,8 @@ export class Sala {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
-  disponible!: string;
+  // @Column()
+  // disponible!: string;
 
   @Column()
   numeroSala!: number;
