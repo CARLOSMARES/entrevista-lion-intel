@@ -10,7 +10,7 @@ class AuthController {
 
     if (!(email && password)) {
       return res.status(400).json({
-        message: `Email and password are required`,
+        message: "Email and password are required",
       });
     }
 
@@ -18,14 +18,14 @@ class AuthController {
     const user = await userRepository.findOneBy({ email });
     if (!user) {
       return res.status(401).json({
-        message: `Invalid credentials`,
+        message: "Invalid credentials",
       });
     }
 
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
       return res.status(401).json({
-        message: `Invalida credentials`,
+        message: "Invalid credentials",
       });
     }
 
@@ -36,7 +36,7 @@ class AuthController {
       },
       process.env.JWT_SECRET as string,
       {
-        expiresIn: `1h`,
+        expiresIn: "1h",
       }
     );
 
