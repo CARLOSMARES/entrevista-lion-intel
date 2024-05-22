@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-  margin: 3%;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 3%;
+}
 
 @media (prefers-color-scheme: dark) {
   * {
