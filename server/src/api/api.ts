@@ -3,6 +3,7 @@ import http, { Server } from "http";
 import UserController from "./controllers/UserController";
 import { API } from "./interfaces";
 import * as routes from "./routes/routes";
+import cors from 'cors';
 
 export class ExpressApi implements API {
   private router: express.Router;
@@ -11,6 +12,7 @@ export class ExpressApi implements API {
   constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
     this.router = express.Router();
+    this.router.use(cors());
     this.router.use(express.json());
     this.router.get("/", routes.welcome);
     this.router.get("/health", routes.healthCheck);
