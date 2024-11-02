@@ -11,8 +11,8 @@ const limiter = rateLimit({
   max: 100, // limit each IP to 100 requests per windowMs
 });
 
-reservacion.use(authMiddleware);
 reservacion.use(limiter);
+reservacion.use(authMiddleware);
 reservacion.get("/", ReservacionController.getAllSala);
 reservacion.post("/newReservacion", ReservacionController.createReservacion);
 
